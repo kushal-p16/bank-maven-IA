@@ -18,22 +18,20 @@ public class BankAccountTest {
     }
 
     // Test Case 2: Insufficient balance
-   
-@Test
-void testInsufficientBalance() {
+    @Test
+    void testInsufficientBalance() {
 
-    BankAccount account = new BankAccount(500);
+        BankAccount account = new BankAccount(500);
 
-    IllegalArgumentException exception = assertThrows(
-        IllegalArgumentException.class,
-        () -> account.withdraw(600)
-    );
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> account.withdraw(600)
+        );
 
-    System.out.println("Exception: " + exception.getMessage());
+        System.out.println("Exception: " + exception.getMessage());
 
-    assertEquals("Insufficient balance", exception.getMessage());
-}
-
+        assertEquals("Insufficient balance", exception.getMessage());
+    }
 
     // Test Case 3: Successful withdrawal
     @Test
