@@ -1,22 +1,27 @@
+
 package com.example.maven_github_bank;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BankAccountTest {
 
     @Test
     void testSuccessfulDepositAndWithdrawal() {
+
         BankAccount account = new BankAccount(1000);
 
         account.deposit(500);
         account.withdraw(200);
 
-        assertEquals(1300, account.getBalance());
+        // Intentional failure: actual balance is 1300
+        assertEquals(1500, account.getBalance());
     }
 
     @Test
     void testInsufficientBalance() {
+
         BankAccount account = new BankAccount(500);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -26,6 +31,7 @@ public class BankAccountTest {
 
     @Test
     void testZeroDeposit() {
+
         BankAccount account = new BankAccount(1000);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -35,6 +41,7 @@ public class BankAccountTest {
 
     @Test
     void testNegativeDeposit() {
+
         BankAccount account = new BankAccount(1000);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -44,6 +51,7 @@ public class BankAccountTest {
 
     @Test
     void testNegativeWithdrawal() {
+
         BankAccount account = new BankAccount(1000);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -53,6 +61,7 @@ public class BankAccountTest {
 
     @Test
     void testMultipleTransactions() {
+
         BankAccount account = new BankAccount(2000);
 
         account.deposit(1000);
