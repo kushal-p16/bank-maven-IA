@@ -28,7 +28,7 @@ public class BankAccountTest {
         });
     }
 
-    // Test Case 3: Intentional failure
+    // Test Case 3: Successful withdrawal
     @Test
     void testWithdrawal() {
 
@@ -36,7 +36,6 @@ public class BankAccountTest {
 
         account.withdraw(200);
 
-        // Intentionally incorrect expected balance
-        assertEquals(900, account.getBalance());
+        assertEquals(800, account.getBalance());
     }
 }
