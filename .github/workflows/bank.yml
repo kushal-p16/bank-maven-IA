@@ -56,5 +56,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/maven-github-demo:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/maven-github-demo:${{ github.sha }}
+            kushalp1657/bank-maven-ia:latest
+            kushalp1657/bank-maven-ia:${{ github.sha }}
